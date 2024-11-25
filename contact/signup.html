@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Form Signup</title>
+    <link rel="stylesheet" href="/css/signup.css" />
+
+</head>
+<body>
+    <nav class="menu-bar">
+        <div class="nav-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="logo">
+            <a href="#"><img src="/images/logos/logo_astra.png" alt="Logo Astra Vriemarr"></a>
+            <h1>Astra<span>Vriemarr</span></h1>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="/home.html" class="act">Home <i class="fa fa-fw fa-home"></i></a></li>
+            <li><a href="/astra-factory.html" class="main-btn">Astra Factory <i class='bx bx-right-arrow-alt'></i></a></li>
+            <li>
+                <a href="#portofolio.html" >University Collection <i class="fas fa-caret-down"></i></a>
+                <div class="dropdown-menu">
+                    <ul>
+                        <li><a href="/UPH-collection.html">Pelita Harapan University</a></li>
+                        <li><a href="/UNTAR-collection.html">Tarumanagara University</a></li>
+                        <li><a href="/UII-collection.html">Islamic University of Indonesia</a></li>
+                        <li><a href="/Bakrie-collection.html">Bakrie University</a></li>
+                        <li><a href="/Ciputra-collection.html"> Universitas Ciputra </a></li>
+                        <li><a href="/Ipkea-collection.html">ipeka international school</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="#other-info.html">Other Info <i class="fas fa-caret-down"></i></a>
+                <div class="dropdown-menu">
+                    <ul>
+                        <li><a href="/size-chart.html">Size Chart</a></li>
+                        <li><a href="/contoh.desain.html">Contoh Desain</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="/contact/signup.html">Contact Us</a></li>
+        </ul>
+    </nav> 
+    <body>
+        <div class="page-container">
+            <div class="image-section">
+                <img src="/images/CALL CENTER.png" alt="CALL-CENTER" alt="Contact Us">
+                <div class="image-overlay"></div>
+            </div>
+        <div class="container">
+            <h1>Contact Us</h1>
+            <form id="signupForm" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="a527b1d7-357a-4614-97c7-b99dfa11fd6d">
+                <div class="form-group">
+                    <label for="username">Nama Pengguna:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Pesan:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit">Kirim</button>
+            </form>
+            <div id="responseMessage" class="response-message"></div>
+        </div>
+        </div>
+        <div class="container">
+             <div class="contact-wrapper"> 
+                <div class="contact-info">
+                    <h2>Get In Touch</h2> 
+                    <div class="info-block"> 
+                        <h3>Email Address</h3> 
+                        <a href="mailto:astravriemarr@gmail.com">astravriemarr@gmail.com</a> 
+                    </div>
+                     <div class="info-block"> 
+                        <h3>Our Location</h3> 
+                        <p> HQ Office & Garment Factory Jl. 
+                            Tapos Rt.03 Rw 05 Kota Depok, 
+                            Jawa Barat - Indonesia </p> 
+                    </div> 
+                        
+                        <div class="icons"> <a href="https://wa.me/6287727168104" target="_blank"> 
+                            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" width="40" height="40"> 
+                        </a> </div> 
+                        <div class="map">
+                             <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3964.694182245569!2d106.88403030892518!3d-6.433315019375569!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMjYnMDAuMSJTIDEwNsKwNTMnMDIuMyJF!5e0!3m2!1sid!2sid!4v1723602268335!5m2!1sid!2sid" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>              
+                        </div> 
+                    </div>
+             </div>
+        </div>
+        <footer>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/vriemarr_astraco/?hl=id" target="_blank">
+                    <i class="fab fa-instagram fa-2x" style="color: #ac2bac;"></i>
+                </a>
+                <a href="https://x.com/astravrie" target="_blank">
+                    <i class="fab fa-twitter fa-2x" style="color: #55acee;"></i>
+                </a>
+            </div>
+            <p>&copy; 2024 PT. Astra Vriemarr Garment. All rights reserved.</p>
+        </footer>
+
+    
+
+    <script src="/js/signup.js"></script>
+</body>
+</html>

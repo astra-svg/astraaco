@@ -1,0 +1,490 @@
+/* Root Variables */
+:root {
+    --color-primary: #076d57;
+    --color-white: #e9e9e9;
+    --color-black: #141d28;
+    --color-black-1: #0a2242;
+    --header-height: 60px;
+  }
+  
+  /* Global Styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: "Jost", sans-serif;
+    font-optical-sizing: auto;
+    list-style: none;
+    text-decoration: none;
+  }
+  
+  body {
+    font-family: "Jost", sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    scroll-behavior: smooth;
+  }
+  
+  ul {
+    list-style-type: none;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  
+  
+  /* Header and Navigation */
+  .menu-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-black);
+    height: var(--header-height);
+    padding: 0 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .menu-bar .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .menu-bar .logo img {
+    height: 50px;
+  }
+  
+  .menu-bar .logo h1 {
+    color: var(--color-white);
+    margin: 0;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+  
+  .menu-bar .logo h1 span {
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+  
+  .nav-menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu li {
+    margin-left: 20px;
+}
+
+.nav-menu li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 0;
+    display: block;
+}
+  
+  .nav-menu a:hover {
+    color: var(--color-primary);
+  }
+  
+  .nav-toggle {
+    display: none;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-toggle:hover {
+    color: var(--color-primary);
+  }
+  
+  /* Dropdown */
+  .nav-menu li:hover .dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: var(--color-black);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  
+  .dropdown-menu ul {
+    padding: 10px;
+  }
+  
+  .dropdown-menu a {
+    padding: 10px;
+    color: #fff;
+    display: block;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .dropdown-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+   /* Responsive styling */
+   @media (max-width: 768px) {
+    .nav-toggle {
+        display: block; 
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        z-index: 1;
+    }
+
+    .nav-menu.active {
+        display: flex; 
+    }
+
+    .nav-menu li {
+        margin: 0;
+        border-bottom: 1px solid #444;
+    }
+
+    .nav-menu li a {
+        padding: 15px;
+    }
+  }
+ 
+/* large-banner */
+.large-banner {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  height: 500px;
+  margin-top: 60px; /* Menambahkan jarak dari navigasi (sesuaikan dengan tinggi menu navigasi Anda) */
+}
+
+.large-banner__image-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden; /* Mencegah overflow */
+  will-change: transform; /* Optimisasi performa */
+}
+
+.large-banner__image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  image-rendering: -webkit-optimize-contrast; /* Untuk Chrome/Safari */
+  image-rendering: crisp-edges; /* Untuk Firefox */
+  -ms-interpolation-mode: nearest-neighbor; /* Untuk IE/Edge */
+  backface-visibility: hidden; /* Mencegah blur saat transformasi */
+  transform: translateZ(0); /* Hardware acceleration */
+}
+
+.large-banner__text {
+  position: relative;
+  z-index: 2;
+  width: 50%;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.large-banner__heading {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  line-height: 1.2; /* Tightens the spacing between lines */
+  letter-spacing: 0.05em; /* Slightly increase letter spacing for readability */
+}
+
+.large-banner__subheading p {
+  font-size: 1em;
+  color: #666;
+  line-height: 1.6; /* Improves readability */
+  margin-bottom: 0; /* Removes any extra margin */
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .large-banner__text {
+      width: 60%;
+  }
+}
+
+@media (max-width: 768px) {
+  .large-banner {
+      flex-direction: column;
+      height: auto; /* Adjust height for smaller screens */
+      margin-top: 50px; /* Tambahkan jarak untuk navigasi */
+  }
+  .large-banner__text {
+      width: 100%;
+      order: 2;
+      padding: 20px; /* Reduce padding for smaller screens */
+  }
+  .large-banner__image-wrapper {
+      position: relative;
+      height: 300px;
+      order: 1;
+  }
+}
+
+@media (max-width: 576px) {
+  .large-banner {
+      margin-top: 70px; /* Tambahkan jarak sesuai tinggi navigasi di HP */
+  }
+  .large-banner__heading {
+      font-size: 2em;
+  }
+
+  .large-banner__image-wrapper {
+      position: relative;
+      height: 300px;
+      margin-bottom: 20px; /* Add space below the image */
+  }
+}
+  
+  /* Intro Section */
+  .intro {
+    background-color: #141d28;
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .intro-text h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+  
+  .intro-text p {
+    font-size: 18px;
+    color: #fafafa;
+    line-height: 1.6;
+  }
+  
+  /* About Us */
+  .container {
+    padding: 80px 20px;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+  }
+  
+  .col-md-4 {
+    flex: 1;
+    max-width: 30%;
+    text-align: center;
+  }
+  
+  .col-md-4 img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .section-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    color: #333;
+  }
+  
+  /* Services Section */
+  .services {
+    padding: 40px 20px; 
+    text-align: center;
+    background-color: #141d28; 
+}
+
+.services h2 {
+    font-size: 28px; 
+    margin-bottom: 30px; 
+    color: #fffbfb;
+    font-family: 'Montserrat', sans-serif; 
+    letter-spacing: 1px; 
+}
+
+.service-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; 
+}
+
+.service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 160px; 
+    padding: 10px; 
+    background-color: #1f2a37; 
+    border-radius: 8px; 
+    transition: transform 0.3s ease; 
+}
+
+.service:hover {
+    transform: translateY(-5px); 
+}
+
+.service img {
+    width: 80px; 
+    height: auto;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease; 
+}
+
+.service:hover img {
+    transform: scale(1.1); 
+}
+
+.service p {
+    font-size: 16px; 
+    color: #ffffff;
+    margin: 0;
+    font-family: 'Lora', serif; 
+}
+
+/* Styling umum */
+.customer-slider {
+  text-align: center;
+  margin: 30px 0; /* Kurangi jarak margin */
+}
+
+.slider-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0; /* Kurangi jarak antar slider */
+}
+
+.slider {
+  display: flex;
+  flex-wrap: nowrap;
+  will-change: transform;
+}
+
+.slider img {
+  width: 100px;  /* Sesuaikan ukuran logo */
+  height: auto;
+  object-fit: contain;
+  margin: 0 10px; /* Kurangi spasi antar gambar */
+}
+
+#slider-left, #slider-right {
+  display: flex;
+}
+
+/* Responsif untuk mobile */
+@media (max-width: 768px) {
+  .slider img {
+      width: 100px; /* Ubah ukuran logo untuk mobile */
+  }
+}
+
+  /* Footer */
+  footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+    font-family: "Arial", sans-serif;
+    font-size: 14px;
+  }
+  
+  .social-icons {
+    margin-bottom: 15px;
+  }
+  
+  .social-icons a {
+    margin: 0 12px;
+    display: inline-block;
+  }
+  
+  .social-icons img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+  }
+  
+  .social-icons img:hover {
+    transform: scale(1.2);
+  }
+  
+  .footer p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .nav-toggle {
+      display: block;
+    }
+  
+    .nav-menu {
+      position: absolute;
+      top: var(--header-height);
+      right: 0;
+      background-color: var(--color-black);
+      flex-direction: column;
+      width: 200px;
+      display: none;
+      border-radius: 0 0 6px 6px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+  
+    .nav-menu li {
+      margin-left: 0;
+    }
+  
+    .nav-menu a {
+      padding: 10px 15px;
+      font-size: 15px;
+    }
+  
+    .row {
+      flex-direction: column;
+    }
+  
+    .col-md-4 {
+      max-width: 100%;
+      margin-bottom: 40px;
+    }
+  }
